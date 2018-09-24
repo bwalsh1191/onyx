@@ -23,6 +23,7 @@ def index():
     new_sent = ''
 
     for index in range (0,30):
+        new_sent = " "
         message = stockTwits['messages'][index]['body']
         username = stockTwits['messages'][index]['user']['username']
         sentiment = str(stockTwits['messages'][index]['entities']['sentiment'])
