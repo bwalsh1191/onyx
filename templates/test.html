@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+#message {
+    border-radius: 5px;
+    background: rgb(115, 175, 253);
+    padding: 10px; 
+    width: 500px;   
+    font-size: 12px;
+    font-family: 'Helvetica Neue';
+    margin: 5px 15px 5px;
+}
+
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What is Stock Twits Saying??</title>
+</head>
+
+<body>
+
+        <form method="POST">
+               
+                    
+                        <input class="input" name="symbol" type="text" placeholder="Enter a Symbol">
+                 
+                    
+                        <button class="button is-info">
+                            Enter a Symbol
+                        </button>
+                   
+            
+            </form>
+          
+    {% for stockTwitsData in stockTwits_data %}
+        <div>
+            <p id ="message">
+                {{ stockTwitsData.message }}
+                <br>
+                {{ stockTwitsData.sentiment }}
+            </p>
+        </div>       
+                  
+    {% endfor %}
+
+</body>
+
+</html>
