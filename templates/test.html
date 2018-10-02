@@ -11,9 +11,31 @@
     font-size: 12px;
     font-family: 'Helvetica Neue';
     margin: 5px 15px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
 }
 
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 45%;
 
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    margin: 5px 15px 5px;
+    font-family: 'Helvetica Neue';
+    font-size: 12px;
+    background: rgb(115, 175, 253);
+    border-radius: 5px;
+}
+
+.container {
+    padding: 2px 16px;
+}
 </style>
 
 <head>
@@ -25,32 +47,27 @@
 
 <body>
 
-        <form method="POST">
-               
-                    
-                        <input class="input" name="symbol" type="text" placeholder="Enter a Symbol">
-                 
-                    
-                        <button class="button is-info">
-                            Enter a Symbol
-                        </button>
-                   
-            
-            </form>
+        <form method="POST">   
+            <input class="input" name="symbol" type="text" placeholder="Enter a Symbol">     
+            <button class="button is-info">
+                Enter a Symbol
+            </button>
+        </form>
           
     {% for stockTwitsData in stockTwits_data %}
-        <div>
-            <p id ="message">
-                {{ stockTwitsData.message }}
-                <br>
-                {{ stockTwitsData.sentiment }}
-                <br>
-                {{ stockTwitsData.username}}
-            </p>
+        <div class="card">
+            <div class="container">
+                <p>
+                    {{ stockTwitsData.message }}
+                    <br>
+                    {{ stockTwitsData.sentiment }}
+                    <br>
+                    {{ stockTwitsData.username}}
+                </p>
+            </div>
         </div>       
                   
     {% endfor %}
-
 </body>
 
 </html>

@@ -34,7 +34,7 @@ def index():
         if(sentiment == "{'basic': 'Bearish'}"):
             new_sent = 'Bearish'
 
-        new_message= parser.unescape(message)
+        new_message= parser.unescape(message) #convert the message to get rid of unicode chartacters
 
         stockTwitsData = {
             'message' : new_message,
@@ -43,6 +43,5 @@ def index():
         }
 
         stockTwits_data.append(stockTwitsData)
-
 
     return render_template('test.html', stockTwits_data=stockTwits_data)
